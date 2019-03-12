@@ -73,6 +73,7 @@ public class List_inArraySlots {
                        , String stringValue
                        ) {
         // add integer
+        if (filledElements == typeOfElements.length ) expand();
         if (type == 0) {
             typeOfElements[filledElements] = 0;
             intElements[filledElements] = intValue;
@@ -96,13 +97,32 @@ public class List_inArraySlots {
       Double the capacity of the List_inArraySlots,
       preserving existing data.
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
-           // /* S.O.P. rules for debugging:
-              // Working methods should be silent. But during
-              // development, the programmer must verify that
-              // this method is called when that is appropriate.
-              // So test using the println(), then comment it out.
-              // */
-     // }
+     private void expand() {
+        System.out.println( "expand... (for debugging)");
+        int[] intBigger = new int[filledElements *2];
+        for (int index = 0; index < filledElements; index ++)
+             intBigger[index] = intElements[index];
+        intElements = intBigger;
+
+        double[] doubleBigger = new double[filledElements *2];
+        for (int index = 0; index < filledElements; index ++)
+             doubleBigger[index] = doubleElements[index];
+        doubleElements = doubleBigger;
+
+        String[] stringBigger = new String[filledElements *2];
+        for (int index = 0; index < filledElements; index ++)
+             stringBigger[index] = stringElements[index];
+        stringElements = stringBigger;
+
+        int[] typeBigger = new int[filledElements *2];
+        for (int index = 0; index < filledElements; index ++)
+             typeBigger[index] = typeOfElements[index];
+        typeOfElements = typeBigger;
+           /* S.O.P. rules for debugging:
+              Working methods should be silent. But during
+              development, the programmer must verify that
+              this method is called when that is appropriate.
+              So test using the println(), then comment it out.
+              */
+     }
 }
