@@ -124,5 +124,16 @@ public class List_inArraySlots {
               this method is called when that is appropriate.
               So test using the println(), then comment it out.
               */
-     }
+    }
+
+    public Element get(int type, int index) {
+        Element fakeElement = new Element(type);
+
+        if (type == 0) fakeElement.intElement = intElements[index];
+        if (type == 1) fakeElement.doubleElement = doubleElements[index];
+        if (type == 2) {} fakeElement.stringElement = stringElements[index];
+
+        return fakeElement;
+    }
+
 }
