@@ -11,9 +11,10 @@ public class Element {
 
     public String toString() {
         String s = "";
-        if (type == 0) return s += intElement;
-        if (type == 1) return s += doubleElement;
-        if (type == 2) {} return s += stringElement;
+        if (type == 0) s += intElement;
+        else if (type == 1) s += doubleElement;
+        else if (type == 2) s += stringElement;
+        return s;
     }
 
 }
